@@ -46,14 +46,14 @@ class SignupForm extends Component {
                     component={FormInput}
                 />
                 <Field
-                    className='sign-up-form__create-account'
-                    name='createaccount'
-                    type='submit'
-                    title='Create Account'
+                    className="sign-up-form__create-account"
+                    name="createaccount"
+                    type="submit"
+                    title="Create Account"
                     component={FormButton}
                 />
-                <div className='sign-up-form__text-links'>
-                    <TextLink to='/signin' text='Already Registered? Login' />
+                <div className="sign-up-form__text-links">
+                    <TextLink to="/signin" text="Already Registered? Login" />
                 </div>
             </form>
         );
