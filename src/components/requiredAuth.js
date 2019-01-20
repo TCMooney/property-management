@@ -1,15 +1,19 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 
+import history from '../history';
+
 export default function(ComposedComponent) {
     class Authenitication extends Component {
         componentWillMount() {
             if(!this.props.authenticated) {
-                this.props.history.push('/')
+                history.push('/')
             }
         }
-        componentWillUpdate(){
-
+        componentWillUpdate(nextProps){
+            if(!nextProps.authenticated) {
+                history.push('/');
+            }
         }
         render() {
             return <ComposedComponent/>
