@@ -1,6 +1,7 @@
 .tab-nav {
     display: grid;
     grid-template-rows:[tab-s] 50px [tabs-e content-s] 1fr [content-e];
+    
     &__tabs {
         grid-row: tab-s/tab-e;
         display: grid;
