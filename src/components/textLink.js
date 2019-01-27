@@ -4,10 +4,9 @@ import { Link } from 'react-router-dom';
 
 class TextLink extends Component {
     render() {
-
         const { to, text } = this.props;
 
-        return(
+        return (
             <Link to={to} className='text-link'>
                 {text}
             </Link>

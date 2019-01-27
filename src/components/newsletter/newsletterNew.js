@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
-import  NewNewsletterForm from './newsletterNewForm'
+import NewNewsletterForm from './newsletterNewForm';
 
 class NewNewsletter extends Component {
 
@@ -8,13 +8,13 @@ class NewNewsletter extends Component {
         console.log('trying to handle submit')
     }
 
-   render() {
-       return (
-           <div className="newsletter-new">
-               <NewNewsletterForm onSubmit={(event) => this.onSubmit(event)}/>
-           </div>
-       );
-   }
+    render() {
+        return (
+            <div className='new-newsletter'>
+                <NewNewsletterForm onSubmit={(event) => this.onSubmit(event)}/>
+            </div>
+        )
+    }
 }
 
 export default NewNewsletter;

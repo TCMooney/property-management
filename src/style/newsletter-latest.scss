@@ -1,6 +1,7 @@
 .newsletter-latest {
     grid-row: s/e;
     grid-column: latest-s/latest-e;
+
     display: grid;
     grid-template-rows: [s] 258px [m] 405px [e];
     grid-template-columns: [s] 1fr [e];
@@ -11,26 +12,27 @@
     & > * {
         grid-column: s/e;
     }
+
     &__title,
     &__image {
         justify-self: center;
         align-self: center;
     }
+
     &__title {
         grid-row: s/m;
         color: white;
-        font-size: 40px;
+        font-size: 4rem;
         font-weight: 500;
         line-height: 5rem;
         text-align: center;
     }
     &__image {
-        grid-row:s/m;
+        grid-row: s/m;
         z-index: -10;
-
     }
     &__body {
-        grid-row:m/e;
+        grid-row: m/e;
         p {
             margin: 6.3rem 6.05rem;
             line-height: 2.2rem;

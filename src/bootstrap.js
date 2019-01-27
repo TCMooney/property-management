@@ -6,26 +6,23 @@ import { Router, Route, Switch } from 'react-router-dom';
 import reduxThunk from 'redux-thunk';
 import reducers from './reducers';
 
-
 const createStoreWithMiddleware = applyMiddleware(reduxThunk)(compose((window.devToolsExtension ? window.devToolsExtension() : f => f)(createStore)));
- 
+
+// import 'bootstrap/dist/css/bootstrap.css';
 import './style/main.scss';
 
 import history from './history';
 
 import Layout from './components/layout';
 
-//AUTH
-import requiredAuth from './components/requiredAuth';
+// AUTH
+import requireAuth from './components/requireAuth';
 import Signup from './components/auth/signup';
 import Signin from './components/auth/signin';
 
-//DASHBOARD
+// DASHBOARD
 import Dashboard from './components/dashboard';
 import NewNewsletter from './components/newsletter/newsletterNew';
-
-
-
 
 function main() {
   ReactDOM.render(
@@ -36,8 +33,9 @@ function main() {
             <Route path='/' exact component={Signin}/>
             <Route path='/signin' component={Signin}/>
             <Route path='/signup' component={Signup}/>
-            <Route path='/dashboard' component={requiredAuth(Dashboard)}/>
-            <Route path='/newsletter/new' component={requiredAuth(NewNewsletter)}/>
+
+            <Route path='/dashboard' component={requireAuth(Dashboard)}/>
+            <Route path='/newsletter/new' component={requireAuth(NewNewsletter)}/>
           </Layout>
         </Switch>
       </Router>
