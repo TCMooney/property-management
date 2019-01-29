@@ -23,6 +23,7 @@ import Signin from './components/auth/signin';
 // DASHBOARD
 import Dashboard from './components/dashboard';
 import NewNewsletter from './components/newsletter/newsletterNew';
+import EditNewsletter from './components/newsletter/newsletterEdit';
 
 function main() {
   ReactDOM.render(
@@ -33,9 +34,9 @@ function main() {
             <Route path='/' exact component={Signin}/>
             <Route path='/signin' component={Signin}/>
             <Route path='/signup' component={Signup}/>
-
             <Route path='/dashboard' component={requireAuth(Dashboard)}/>
             <Route path='/newsletter/new' component={requireAuth(NewNewsletter)}/>
+            <Route path='/newsletter/edit/:id' component={requireAuth(EditNewsletter)}/>
           </Layout>
         </Switch>
       </Router>
