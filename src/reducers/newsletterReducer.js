@@ -13,7 +13,6 @@ export default function(state = INITIAL_STATE, action) {
             return {
                 ...state,
                 newsletters
-                
             }
         default: return state;
     }
