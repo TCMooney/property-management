@@ -18,6 +18,11 @@ class EditNewsletter extends Component {
 
     }
 
+    componentDidMount() {
+        // this.props.fetchNewsletterWithId()
+        console.log(this.props.match.params.id)
+    }
+
     render() {
         return (
             <div className='new-newsletter'>
