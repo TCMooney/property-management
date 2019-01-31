@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 
 import Button from '../button';
+import RequestBox from './requestBoxes';
+import Requests from './requests';
 
 class RequestsGrid extends Component {
    
@@ -12,6 +14,8 @@ class RequestsGrid extends Component {
        return (
            <div className="requests-grid">
                <Button className='requests-grid__button' icon='fas fa-plus' callback={() => this.handleAddRequst()}/>
+               <RequestBox/>
+               <Requests/>
            </div>
        );
    }
