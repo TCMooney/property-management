@@ -7,21 +7,23 @@
     &__icon {
         grid-column: icon-s/icon-e;
         grid-row: s/e;
-        background-color: cornflowerblue;
         justify-self: center;
     }
-    &__title{
+    &__title {
+        align-self: end;
         grid-column: title-s/title-e;
         grid-row: title-s/title-e;
+
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
     }
     &__tenant-unit {
+        align-self: start;
         grid-column: title-s/title-e;
         grid-row: tenant-s/tenant-e;
     }
-    &__arrow {
-        grid-column: arrow-s/arrow-e;
-        grid-row: title-s/title-e;
-    }
+    
     &__date {
         grid-column: date-s/date-e;
         grid-row: s/e;
@@ -40,10 +42,46 @@
         grid-column-gap: 4rem;
         grid-auto-flow: column;
     }
-    &__description-img {
+}
 
+.requests-item {
+    
+    &__icon {
+        font-size: 2rem;
+    }
+    &__title {
+        &__text {
+            font-size: 1.8rem;
+            font-weight: 500;
+            line-height: 2.3rem;
+            margin-right: 2.5rem;
+        }
+        &__arrow {
+            color: $color-gray-4D;
+            font-size: 3rem;
+        }
+    }
+    &__tenant-unit {
+        font-family: $font-encode-cond;
+        color: $color-red-BA;
+        font-size: 1.3rem;
+        line-height: 1.6rem;
+    }
+    &__date {
+        font-size: 1.4rem;
+        line-height: 1.7rem;
+    }
+    &__move {
+        
+    }
+    &__description {
+        
+    }
+    &__description-img {
+        
     }
     &__description-text {
-
+        font-size: 1.4rem;
+        line-height: 1.7rem;
     }
 }
