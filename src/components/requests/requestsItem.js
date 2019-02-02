@@ -15,16 +15,19 @@ export default class RequestsItem extends Component {
     }
 
     toggleDropdown = () => {
+        var element = document.getElementById('requests-item');
         if(this.state.height == 0) {
+            element.classList.add('bg-F8');
             this.setState({height: 'auto'})
         } else {
+            element.classList.remove('bg-F8');
             this.setState({height: 0})
         }
     }
 
     render() {
         return (
-            <div className="requests-item">
+            <div id="requests-item" className="requests-item">
                 <Icon className="requests-item__icon" icon='fas fa-exclamation-triangle' />
                 <div className="requests-item__title">
                     <div className="requests-item__title__text">Yo my sink stinks</div>
@@ -39,9 +42,9 @@ export default class RequestsItem extends Component {
                 <Button className="requests-item__move" icon="fas fa-wrench" callback={console.log('change request item status')} />
                 <div className="requests-item__description">
                     <AnimateHeight duration={300} height={this.state.height}>
-                        <div className="requests-item__description">
-                            <img className="requests-item__description-img" src="http://via.placeholder.com/160x94" />
-                            <p className="requests-item__description-text">
+                        <div className="item-description">
+                            <img className="item-description__img" src="http://via.placeholder.com/160x94" />
+                            <p className="item-description__text">
                                 Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
                             </p>
                         </div>
