@@ -12,7 +12,7 @@ class NewRequest extends Component {
         //     // save newnewsletter on the backend
         //     console.log('trying to submit to the backend');
         // }
-        this.props.createNewRequest(this.props._id, {}, () => {
+        this.props.createNewRequest(this.props._id, fields, () => {
             this.props.history.push('/dashboard');
         });
         
