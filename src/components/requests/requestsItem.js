@@ -38,7 +38,7 @@ export default class RequestsItem extends Component {
                 <div className="requests-item__date">
                     06/26/1988
                 </div>
-                <Button className="requests-item__move" icon="fas fa-wrench" callback={console.log('change request item status')} />
+                <Button className="requests-item__move" icon="fas fa-wrench" />
                 <div className="requests-item__description">
                     <AnimateHeight duration={300} height={this.state.height}>
                         <div className="item-description">
