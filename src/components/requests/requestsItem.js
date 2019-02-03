@@ -3,7 +3,6 @@ import AnimateHeight from 'react-animate-height';
 
 import Icon from '../icon';
 import Button from '../button';
-import { throws } from 'assert';
 
 export default class RequestsItem extends Component {
     constructor() {

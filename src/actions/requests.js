@@ -12,15 +12,17 @@ export function changeSelectedRequestType(boxType) {
     )
 };
 
-export function createNewRequests(newRequest, success) {
-    return function() {
-        axios.post(`${ROOT_URL}/requests/new`)
-            then(response => {
-                console.log(response.data);
-                success();
-            })
-            .catch(err => {
-                console.log(err);
-            })
-    }
+export function createNewRequest(userId, newRequest, success) {
+    console.log('token:', localStorage.getItem('token'))
+    console.log('userId:', userId)
+    // return function() {
+    //     axios.post(`${ROOT_URL}/requests/new`, newRequest)
+    //         then(response => {
+    //             console.log(response.data);
+    //             success();
+    //         })
+    //         .catch(err => {
+    //             console.log(err);
+    //         })
+    // }
 }
