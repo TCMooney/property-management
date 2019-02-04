@@ -1,45 +1,46 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
-import NewNewsletterForm from '../newsletter/newsletterNewForm';
+import NewNewsletterForm from "../newsletter/newsletterNewForm";
 
 class NewRequest extends Component {
 
-    onSubmit = (fields) => {
-        const { title, body, image } = fields;
+  onSubmit = fields => {
 
-        var formData = new FormData();
-        formData.append('title', title);
-        formData.append('body', body);
-        formData.append('image', image);
+    const { title, body, image } = fields;
 
-        this.props.createNewRequest(this.props._id, fields, () => {
-            this.props.history.push('/dashboard');
-        });
-        
-    }
+    var formData = new FormData();
+    formData.append('title', title);
+    formData.append('body', body);
+    formData.append('image', image);
 
-    onCancel = () => {
-        this.props.history.push('/dashboard');
+    this.props.createNewRequest(this.props._id, formData, () => {
+        this.props.history.push("/dashboard");
+    })
+    
+  };
 
-    }
+  onCancel = () => {
+    this.props.history.push("/dashboard");
+  };
 
-    render() {
-        return (
-            <div className='new-request'>
-                <NewNewsletterForm 
-                    onCancel={() => this.onCancel()} 
-                    onSubmit={(event) => this.onSubmit(event)}
-                    formTitle='New Request'
-                    fieldOnePlaceholder="Service Request Title Here"
-                    fieldOneTitle="Service Request Title"
-                    fieldTwoPlaceholder="Description Here"
-                    fieldTwoTitle="Description"
-                />
-            </div>
-        )
-    }
+  render() {
+    return (
+      <div className="new-request">
+        <NewNewsletterForm
+          onCancel={() => this.onCancel()}
+          onSubmit={event => this.onSubmit(event)}
+          formTitle='New Request'
+          fieldOnePlaceholder='Service Request Title Here'
+          fieldOneTitle='Service Request Title'
+          fieldTwoPlaceholder='Description Here'
+          fieldTwoTitle='Description'
+        />
+      </div>
+    );
+  }
 }
 
 function mapStateToProps(state) {

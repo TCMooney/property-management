@@ -1,5 +1,5 @@
 import {
-    SET_NEWSLETTERS, 
+    SET_NEWSLETTERS,
     FETCH_NEWSLETTER_ID
 } from '../actions/types';
 

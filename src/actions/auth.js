@@ -1,4 +1,3 @@
-
 import axios from 'axios';
 
 import { ROOT_URL } from '../config';
@@ -6,6 +5,7 @@ import { ROOT_URL } from '../config';
 import {
     AUTHENTICATE_USER
 } from './types';
+
 
 export function signUp(fields, success) {
     return function(dispatch) {

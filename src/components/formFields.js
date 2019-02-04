@@ -12,7 +12,7 @@ export class FormInput extends Component {
                     type={type}
                     {...input}
                     placeholder={placeholder}
-                    value={editValue ? editValue : input.value}
+                    value={editValue ? editValue : input.value}    
                 />
             </div>
         )
@@ -29,9 +29,11 @@ export class FormTextArea extends Component {
                     className='form-textarea__input'
                     type={type}
                     {...input}
-                    placeholder={placeholder}
-                    value={editValue ? editValue : input.value}
-                ></textarea>
+                    placeholder={placeholder} 
+                    value={editValue ? editValue : input.value}   
+                />
+                
+                {/* </textarea> */}
             </div>
         )
     }
@@ -42,16 +44,17 @@ export class FormButton extends Component {
     render() {
         const { className, title, input, type, small, danger, onClick } = this.props;
         return (
-            <div className={`${className} form-button ${small ? 'form-button-small' : 'form-button'}`}>
+            <div className={`${className} ${small ? 'form-button-small' : 'form-button'}`}>
                 <button
                     className={`
                         ${small ? 'form-button-small' : 'form-button'}__button 
-                        ${danger ? 'form-button-small__danger' : ''}`}
+                        ${danger ? 'form-button-small__danger' : ''}
+                    `}
                     type={type}
-                    {...input}
+                    {...input} 
                     onClick={onClick}
                 >
-                    {title}
+                {title}
                 </button>
             </div>
         )
@@ -60,7 +63,7 @@ export class FormButton extends Component {
 
 export class FormImage extends Component {
 
-    handleSelectedImage = (event) =>  {
+    handleSelectedImage = (event) => {
         const { input: { onChange } } = this.props;
         var image = document.getElementById('newsletter-new-image');
         image.src = URL.createObjectURL(event.target.files[0]);
@@ -75,28 +78,26 @@ export class FormImage extends Component {
                 <img
                     id='newsletter-new-image'
                     className='form-image__image'
-                    src={imageUrl}
+                    src={imageUrl} 
                 />
                 <input
-                    className="form-image__replace"
+                    className='form-image__replace'
                     type='button'
-                    
                     value='Replace'
                     onClick={
                         () => document.getElementById('file') ? document.getElementById('file').click() : ''
                     }
                 />
-                <input
-                    type='file' 
-                    {...input}
-                    style={{display: 'none'}}
-                    id='file'
-                    name='file'
-                    accepts='image/*'
-                    value={undefined}
-                    onChange={this.handleSelectedImage}
-                />
-                {/* replace button/input button goes here */}
+                <input {...input} 
+                        type='file'
+                        style={{display: 'none'}}
+                        id='file'
+                        name='file'
+                        accepts='image/*'
+                        value={undefined}
+                        onChange={this.handleSelectedImage}
+                        />
+                {/* replace button/input goes here */}
             </div>
         )
     }

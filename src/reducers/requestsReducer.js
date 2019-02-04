@@ -1,5 +1,5 @@
 import {
-    CHANGE_SELECETED_REQUEST_TYPE
+    CHANGE_SELECTED_REQUEST_TYPE
 } from '../actions/types';
 
 const INITIAL_STATE = {
@@ -9,7 +9,7 @@ const INITIAL_STATE = {
 
 export default function(state = INITIAL_STATE, action) {
     switch (action.type) {
-        case CHANGE_SELECETED_REQUEST_TYPE:
+        case CHANGE_SELECTED_REQUEST_TYPE:
             const boxType = action.payload
             return {
                 ...state,
