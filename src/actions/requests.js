@@ -32,3 +32,19 @@ import {
                })
        }
    }
+
+export function fetchRequests() {
+    const token = localStorage.getItem('token');
+    return function() {
+        axios.get(`${ROOT_URL}/requests`,{
+            headers: { authorization: token }
+        })
+            .then(response => {
+                console.log(response.data);
+                // success();
+        })
+            .catch(err => {
+                console.log(err);
+        })
+    }
+}
