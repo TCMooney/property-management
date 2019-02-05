@@ -1,5 +1,5 @@
 import {
-    CHANGE_SELECTED_REQUEST_TYPE, 
+    CHANGE_SELECTED_REQUEST_TYPE,
     SET_REQUESTS
    } from './types';
    
@@ -33,21 +33,36 @@ import {
                })
        }
    }
-
-export function fetchRequests() {
-    const token = localStorage.getItem('token');
-    return function(dispatch) {
-        axios.get(`${ROOT_URL}/requests`,{
-            headers: { authorization: token }
-        })
-            .then(response => {
-                dispatch({
-                    type: SET_REQUESTS,
-                    payload: response.data
-                })
-        })
-            .catch(err => {
-                console.log(err);
-        })
-    }
-}
+   
+   export function fetchRequests() {
+       const token = localStorage.getItem('token');
+       return function(dispatch) {
+           axios.get(`${ROOT_URL}/requests`, {
+               headers: { authorization: token }
+           })
+               .then(response => {
+                   dispatch({
+                       type: SET_REQUESTS,
+                       payload: response.data
+                   })
+               })
+               .catch(err => {
+                   console.log(err);
+               })
+       }
+   }
+   
+   export function changeStatus({_id, status}) {
+       const token = localStorage.getItem('token');
+       return function() {
+           axios.post(`${ROOT_URL}/requests/update-status`, {_id, status}, {
+               headers: { authorization: token }
+           })
+               .then(response => {
+                   console.log(response.data);
+               })
+               .catch(err => {
+                   console.log(err);
+               })
+       }
+   }
