@@ -17,7 +17,7 @@ class NewRequest extends Component {
     formData.append('image', image);
 
     this.props.createNewRequest(this.props._id, formData, () => {
-        this.props.history.push("/dashboard");
+      this.props.history.push("/dashboard");
     })
     
   };
