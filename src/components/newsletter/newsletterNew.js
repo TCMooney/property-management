@@ -7,14 +7,16 @@ import NewNewsletterForm from './newsletterNewForm';
 
 class NewNewsletter extends Component {
 
-    onSubmit = (fields) => {     
+    onSubmit = fields => {
+        
         const { title, body, image } = fields;
+
         var formData = new FormData();
         formData.append('title', title);
         formData.append('body', body);
         formData.append('image', image);
 
-        this.props.createNewNewsletter(this.props._id, formData, () => {
+        this.props.createNewNewsletter(formData, () => {
             this.props.history.push("/dashboard");
         })
     }
