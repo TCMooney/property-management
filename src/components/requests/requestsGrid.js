@@ -9,7 +9,7 @@ import Requests from './requests';
 
 class RequestsGrid extends Component {
    
-    handleAddRequst = () => {
+    handleAddRequest = () => {
         this.props.history.push('/request/new');
     }
    
