@@ -20,7 +20,7 @@ class RequestsGrid extends Component {
     render() {
        return (
            <div className="requests-grid">
-               <Button className='requests-grid__button' icon='fas fa-plus' callback={() => this.handleAddRequst()}/>
+               <Button className='requests-grid__button' icon='fas fa-plus' callback={() => this.handleAddRequest()}/>
                <RequestBoxes/>
                <Requests/>
            </div>

@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 import AnimateHeight from 'react-animate-height';
 
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
+
 import Icon from '../icon';
 import Button from '../button';
 
 import { ROOT_URL } from '../../config';
 
-export default class RequestsItem extends Component {
+class RequestsItem extends Component {
     constructor() {
         super()
 
@@ -46,7 +49,7 @@ export default class RequestsItem extends Component {
                     /
                     { parsedDate.getFullYear() - 2000 } 
                 </div>
-                <Button className="requests-item__move" icon="fas fa-wrench" />
+                <Button className="requests-item__move" icon="fas fa-wrench" callback={() => this.props.changeStatus({_id, status})} />
                 <div className="requests-item__description">
                     <AnimateHeight duration={300} height={this.state.height}>
                         <div className="item-description">
@@ -61,3 +64,7 @@ export default class RequestsItem extends Component {
         );
     }
 }
+
+RequestsItem = connect(null, actions)(RequestsItem);
+
+export default RequestsItem;
