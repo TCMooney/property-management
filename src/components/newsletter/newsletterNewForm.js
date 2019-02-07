@@ -7,21 +7,11 @@ import { FormInput, FormButton, FormTextArea, FormImage } from "../formFields";
 class NewNewsletterForm extends Component {
   render() {
 
-    const { handleSubmit, formTitle, newsletterToEdit} = this.props;
+    const { handleSubmit, formTitle } = this.props;
     const {
       fieldOnePlaceholder, fieldOneTitle,
       fieldTwoPlaceholder, fieldTwoTitle
-      } = this.props;
-
-
-    var title = null;
-    var body = null;
-    var imageUrl = null;
-    if(newsletterToEdit) {
-      title = newsletterToEdit.title;
-      body = newsletterToEdit.body;
-      imageUrl = newsletterToEdit.imageUrl;
-    }
+    } = this.props;
 
     return (
       <form onSubmit={handleSubmit} className="new-newsletter-form">
@@ -33,7 +23,6 @@ class NewNewsletterForm extends Component {
           type="text"
           title={fieldOneTitle}
           component={FormInput}
-          editValue={title ? title : null}
         />
         <Field
           className="new-newsletter-form__body"
@@ -42,7 +31,6 @@ class NewNewsletterForm extends Component {
           type="text"
           title={fieldTwoTitle}
           component={FormTextArea}
-          editValue={body ? body : null}
         />
         <Field
           className="new-newsletter-form__submit"
@@ -52,7 +40,7 @@ class NewNewsletterForm extends Component {
           title="Submit"
           danger={true}
           component={FormButton}
-          
+
         />
         <Field
           className="new-newsletter-form__cancel"
@@ -71,7 +59,6 @@ class NewNewsletterForm extends Component {
           type="file"
           title="Image"
           component={FormImage}
-          imageUrl={imageUrl}
         />
       </form>
     );
