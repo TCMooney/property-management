@@ -1,12 +1,12 @@
 import React, { Component } from "react";
+
 import { reduxForm, Field } from "redux-form";
+import { connect } from 'react-redux';
 
 import { FormTitle } from "../formTitle";
 import { FormInput, FormButton, FormTextArea, FormImage } from "../formFields";
 
 import { ROOT_URL } from '../../config';
-
-import { connect } from 'react-redux';
 
 class EditNewsletterForm extends Component {
     render() {
@@ -19,10 +19,10 @@ class EditNewsletterForm extends Component {
 
 
         return (
-            <form onSubmit={handleSubmit} className="edit-newsletter-form">
-                <FormTitle className="edit-newsletter-form__title" text={formTitle} />
+            <form onSubmit={handleSubmit} className="new-newsletter-form">
+                <FormTitle className="new-newsletter-form__title" text={formTitle} />
                 <Field
-                    className="edit-newsletter-form__newsletter-title"
+                    className="new-newsletter-form__newsletter-title"
                     placeholder={fieldOnePlaceholder}
                     name="title"
                     type="text"
@@ -30,7 +30,7 @@ class EditNewsletterForm extends Component {
                     component={FormInput}
                 />
                 <Field
-                    className="edit-newsletter-form__body"
+                    className="new-newsletter-form__body"
                     placeholder={fieldTwoPlaceholder}
                     name="body"
                     type="text"
@@ -38,7 +38,7 @@ class EditNewsletterForm extends Component {
                     component={FormTextArea}
                 />
                 <Field
-                    className="edit-newsletter-form__submit"
+                    className="new-newsletter-form__submit"
                     small={true}
                     name="submit"
                     type="submit"
@@ -47,7 +47,7 @@ class EditNewsletterForm extends Component {
                     component={FormButton}
                 />
                 <Field
-                    className="edit-newsletter-form__cancel"
+                    className="new-newsletter-form__cancel"
                     small={true}
                     danger={false}
                     name="cancel"
@@ -57,7 +57,7 @@ class EditNewsletterForm extends Component {
                     onClick={this.props.onCancel}
                 />
                 <Field
-                    className="edit-newsletter-form__image"
+                    className="new-newsletter-form__image"
                     small={true}
                     name="image"
                     type="file"
